@@ -1,10 +1,21 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-/*Brute Force*/
+// /*Brute Force*/
+// int largestNumber(vector<int>& nums){
+//     sort(nums.begin(),nums.end());
+//     return nums[nums.size()-1];
+// }
+
+/*Optimal Solution*/
 int largestNumber(vector<int>& nums){
-    sort(nums.begin(),nums.end());
-    return nums[nums.size()-1];
+    int largest = nums[0];
+    for(int i=1;i<nums.size();i++){
+        if(nums[i] > largest){
+            largest = nums[i];
+        }
+    }
+    return largest;
 }
 
 int main(int argc, char const *argv[])
